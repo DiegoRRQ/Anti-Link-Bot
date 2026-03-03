@@ -1,0 +1,20 @@
+{
+  "name": "discord-link-moderator-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that moderates link posting by unauthorized users",
+  "main": "link-moderator-bot.js",
+  "scripts": {
+    "start": "node link-moderator-bot.js",
+    "dev": "nodemon link-moderator-bot.js"
+  },
+  "keywords": ["discord", "bot", "moderation", "link-filter"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
