@@ -1,5 +1,17 @@
 const { Client, GatewayIntentBits, PermissionFlagsBits } = require('discord.js');
+const http = require('http');
 require('dotenv').config();
+
+// Create a simple HTTP server to satisfy Render's port requirement
+const PORT = process.env.PORT || 3000;
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Discord bot is running!');
+});
+
+server.listen(PORT, () => {
+    console.log(`🌐 Web server running on port ${PORT}`);
+});
 
 // Create a new Discord client with necessary intents
 const client = new Client({
@@ -20,7 +32,7 @@ const CONFIG = {
     TIMEOUT_DURATION: 7 * 24 * 60 * 60 * 1000,
     
     // Notification auto-delete time in milliseconds
-    NOTIFICATION_DELETE_TIME: 15000, // 30 seconds (change to 60000 for 60 seconds)
+    NOTIFICATION_DELETE_TIME: 30000, // 30 seconds (change to 60000 for 60 seconds)
     
     // Channels where link moderation is disabled (optional)
     EXEMPT_CHANNELS: [], // Add channel IDs here, e.g., ['123456789', '987654321']
